@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} ENTER SYMTOMES {% endblock %}</h1>
+    <form method="post">
+        
+        <label for="symtomes">symtomes</label>
+        <br>
+        <textarea name="symtomes"
+                  placeholder="Message content"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['symtomes'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
