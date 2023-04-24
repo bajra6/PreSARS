@@ -4,6 +4,7 @@ import './App.css';
 import Banner from './components/Banner';
 import Navbar from './components/Navbar';
 import Symptoms from './components/Symptoms';
+import Search from './components/Search';
 
 let listOfSymptoms = ["itching",
     "skin_rash",
@@ -161,6 +162,7 @@ function App() {
   const [symptoms, updateSymptoms] = useState(arr)
   const [disease, setDisease] = useState("")
   const [doctor, setDoctor] = useState("")
+  const [searchString, setSearchString] = useState("")
 
   function shouldDiagnose() {
 
@@ -188,7 +190,8 @@ function App() {
     <div className="App" style={{height:"100vh", width:"100vw", display:"flex", flexDirection:"column", "justifyContent": "center", alignItems:"center"}}>
       <Navbar />
       <Banner symptoms={symptoms} updateSymptoms={updateSymptoms} disease={disease} doctor={doctor} shouldDiagnose={shouldDiagnose}/>
-      <Symptoms symptoms={symptoms} updateSymptoms={updateSymptoms}/>
+      <Search searchString={searchString} setSearchString={setSearchString}/>
+      <Symptoms symptoms={symptoms} updateSymptoms={updateSymptoms} searchString={searchString}/>
     </div>
   );
 }
