@@ -1,10 +1,9 @@
 import { useState } from "react"
 import { useEffect } from "react"
 
-function Symptoms({symptoms, updateSymptoms, searchString}) {
-    
+function Symptoms({symptoms, updateSymptoms, searchString, groupByCategory}) {
     function symptomUI(ind) {
-        return symptoms[ind].isSelected==false && symptoms[ind].name.toLowerCase().includes(searchString) ?<div style={{backgroundColor:"black", margin:"0.5rem", padding:"0.2rem 0.4rem", cursor:"pointer", borderRadius:"0.5rem", display:"inline-block", color:"white"}} onClick={() => handleClick(ind)}>
+        return symptoms[ind].isSelected==false && symptoms[ind].name.toLowerCase().includes(searchString) && symptoms[ind].category.includes( groupByCategory) ?<div style={{backgroundColor:"black", margin:"0.5rem", padding:"0.2rem 0.4rem", cursor:"pointer", borderRadius:"0.5rem", display:"inline-block", color:"white"}} onClick={() => handleClick(ind)}>
             {symptoms[ind].name}
         </div>:<></>
     }
