@@ -1,7 +1,7 @@
-function Banner ({symptoms, updateSymptoms, disease, doctor, shouldDiagnose}) {
+function Banner ({symptoms, updateSymptoms, disease, doctor, shouldDiagnose, language}) {
     function symptomUI(ind) {
         return symptoms[ind].isSelected ? <div style={{backgroundColor:"black", margin:"0.3rem", padding:"0.2rem 0.4rem", cursor:"pointer", borderRadius:"0.5rem", display:"inline-block", color: "white"}} onClick={() => handleClick(ind)}>
-            {symptoms[ind].name}
+            {language=="Eng"?symptoms[ind].name:symptoms[ind].tamil}
         </div>:<></>
     }
 
